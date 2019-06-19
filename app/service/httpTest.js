@@ -20,9 +20,12 @@ class HttpTest extends Service {
 
 
   async init() {
+      //http://api-oa.insta360.cn/visitor/getAllMembers
+      //http://ng56.nisco.cn/transtime/list?moduleListNavId=Transtime&_=1560767462202
     const result = await this.ctx.curl(`http://api-oa.insta360.cn/visitor/getAllMembers`, { dataType: 'json' });
     return result.data;
   }
+
 }
 module.exports = HttpTest;
 
