@@ -13,17 +13,23 @@ class HttpTest extends Controller {
   async data() {
     const { ctx } = this;
     const data = {
-        data: [
-          {
-            name: 'tttt',
-            age: 4
-          },
-          {
-            name: 'sss',
-            age: 4
-          }
-        ]
+      data: [
+        {
+          name: 'tttt',
+          age: 4
+        },
+        {
+          name: 'sss',
+          age: 4
+        }
+      ]
     }
+    ctx.body = data;
+  }
+
+  async httpinit() {
+    const { ctx } = this;
+    const data = await ctx.service.httpTest.init();
     ctx.body = data;
   }
 
@@ -34,12 +40,13 @@ class HttpTest extends Controller {
     }
   }
 
-  async getHtmlData(){
-    const { ctx } = this;
-    const data = await ctx.service.httpText.init();
-    ctx.body = data;
-  }
+  async login() {
 
+    this.ctx.body = {
+      code: 0,
+      masg: 'login success'
+    }
+  }
 }
 
 module.exports = HttpTest;

@@ -9,7 +9,8 @@ module.exports = app => {
   router.get('/test',controller.pageTest.test);
   router.get('/test2',controller.pageTest.test2);
   router.get('/user/:id', controller.user.info);
-  router.get('/httpinit', controller.httpTest.getHtmlData);
+  router.get('/httpinit', controller.httpTest.httpinit);
   router.get('/getdata',controller.httpTest.data);
   router.post('/post',controller.httpTest.post);
+  router.post('/login',controller.httpTest.login);
 };
