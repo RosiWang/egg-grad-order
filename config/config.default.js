@@ -20,14 +20,14 @@ module.exports = appInfo => {
   //add
   config.security = {
     csrf:{
-      enable:true,
+      enable:false,
       ignoreJSON:true
     },
-   domainWhiteList:['http://localhost:7002']
+   domainWhiteList:['http://localhost:3000/']
   };
   config.cors = {
     origin:'*',
-    allowMethods:'GET,HEAD,PUT,POST,DELETE,PATCH'
+    allowMethods:'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   }
 
 
