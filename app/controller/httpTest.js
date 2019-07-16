@@ -42,11 +42,12 @@ class HttpTest extends Controller {
 
   async login() {
 
-    let data = this.ctx.request.body ;
+    let getData = this.ctx.request.body ;
 
     this.ctx.body = {
       code: 0,
-      masg: {data}
+      data:['data',{'test':getData}],
+      masg: `error post msg${getData}`
     }
   }
 }
